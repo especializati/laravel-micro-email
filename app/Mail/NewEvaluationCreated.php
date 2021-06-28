@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class CompanyCreatedWelcome extends Mailable
+class NewEvaluationCreated extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,7 +28,7 @@ class CompanyCreatedWelcome extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mails.companies.welcome')
-                        ->subject('Bem Vindo(a) - ' . config('app.name'));
+        return $this->markdown('mails.companies.new-evaluation-created')
+                    ->subject('Nova Avaliação - ' . config('app.name'));
     }
 }
